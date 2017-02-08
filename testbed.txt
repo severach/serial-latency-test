@@ -1,0 +1,33 @@
+Test Equipment
+
+Arch Linux
+Linux xx 4.8.13-1-ARCH #1 SMP PREEMPT Fri Dec 9 07:24:34 CET 2016 x86_64 GNU/Linux
+Lenovo Thinkstation E30, Sandy Bridge E3-1245, 16GB RAM
+
+Windows
+Windows 10 32-bit
+Dell Optiplex T1600, Sandy Bridge E3-1225, 4GB RAM
+
+Gigabit networking
+Onboard serial port
+Cisco USB console cable FTDI FT232
+Prolific PL2303 USB cable
+
+Known white papers:
+Digi by eTestingLabs/Veritest 2002
+Comtrol 2003
+Comtrol by Veritest 2003
+SENA 2004
+SENA 2007
+
+Faults with other tests
+
+* Tested COM/tty emulators but didn't test TCP Sockets for a baseline.
+
+* Didn't test RX and TX separately.
+
+* Didn't test on Linux and Windows.
+
+* Didn't list hardware or software versions.
+
+* Receive and transmit on different computers where high resolution clocks can't be synchronized.
