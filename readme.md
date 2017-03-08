@@ -31,7 +31,10 @@ cpan>notest install Win32::SerialPort
 cpan>exit
 ```
 ### Sample run
-For Linux, use `/dev/ttyS0` instead of `COM1`.
+For this run we wire the first device server port to the first COM port on the computer running the test and set the mode to *TCP Sockets*.
+For Linux, use `/dev/ttyS0` or `/dev/ttyUSB0` instead of `COM1`.
+
+The first command would have been successful if we had placed a loopback connector on the first device server port.
 ```
 C:\>perl serial-latency-test.pl COM1
 Pass 0-LP no response. Did you forget a loopback adapter or lose connection?
