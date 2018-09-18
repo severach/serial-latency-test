@@ -494,14 +494,14 @@ endpass: for ($pass=$pass1; $pass<=$pass2; $pass++) {
     # This line will replicate the timing in the Comtrol .py file
     #$ct_rxTime=[gettimeofday()] if ($ct_rxTime == 0);
     if (length($ct_rxdata) == 0) {
-      print $fOutput $g_logtime." Pass $pass-$passTXRXLP no response. Did you forget a loopback adapter or lose connection?\n";
+      print $fOutput $g_logtime." Pass $pass-$passTXRXLP no response. Did you forget a loopback adapter or lose connection?:: $opt_Title\n";
       last endpass; # We want $txclosedelay when this happens.
     }
     my $ct_deltams = tv_interval($ct_txTime, $ct_rxTime)*1000;
     if ($ct_rxdata ne $ct_txdata) {
       print "Response($ct_loops)=$ct_rxdata\n"; # We don't send any hex.
       print "Sent    ($ct_loops)=$ct_txdata\n";
-      logdie("Response and sent mismatched\n");
+      logdie("Response and sent mismatched:: $opt_Title\n");
     }
     if ($opt_Reverse == 3 and $opt_BlockSize == 1) {
       # Send through rx port
@@ -535,7 +535,7 @@ endpass: for ($pass=$pass1; $pass<=$pass2; $pass++) {
       if ($ct_rxdata ne $ct_txdata) {
         print "Response($ct_loops)=$ct_txdata\n"; # We don't send any hex.
         print "Sent    ($ct_loops)=$ct_rxdata\n";
-        logdie("Pass $pass-$passTXRXLP Response and sent mismatched for half duplex test\n");
+        logdie("Pass $pass-$passTXRXLP Response and sent mismatched for half duplex test:: $opt_Title\n");
       }
     }
     print STDERR $ct_rxdata if ($opt_Quiet == 1 and $opt_BlockSize == 1);
